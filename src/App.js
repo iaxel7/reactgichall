@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Counter from './components/Counter';
+import MovieSearch from './components/MovieSearch';
+import TodoList from './components/ToDoList';
+import TaskDetail from './components/TaskDetail';
 import './App.css';
 
+
 function App() {
+  const [tasks, setTasks] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar /> 
+        <Routes>
+          <Route path="/" element={<Counter />} /> 
+          <Route path="/movie-search" element={<MovieSearch />} />
+          <Route path="/todo-list" element={<TodoList tasks={tasks} setTasks={setTasks} />} /> 
+          <Route path="/task/:id" element={<TaskDetail tasks={tasks} setTasks={setTasks} />} /> 
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,41 @@
+.movie-search {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .movie {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+  
+  .movie-detail {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .movie-detail img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  
