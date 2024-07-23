@@ -5,8 +5,7 @@ import Counter from './components/Counter';
 import MovieSearch from './components/MovieSearch';
 import TodoList from './components/ToDoList';
 import TaskDetail from './components/TaskDetail';
-import './App.css';
-
+import './App.css'; 
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -14,12 +13,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar /> 
+        <Navbar /> {/* Navbar component for navigation */}
         <Routes>
-          <Route path="/" element={<Counter />} /> 
-          <Route path="/movie-search" element={<MovieSearch />} />
-          <Route path="/todo-list" element={<TodoList tasks={tasks} setTasks={setTasks} />} /> 
-          <Route path="/task/:id" element={<TaskDetail tasks={tasks} setTasks={setTasks} />} /> 
+          <Route path="/" element={<Counter />} /> {/* Route for the Counter component */}
+          <Route path="/movie-search" element={<MovieSearch />} /> {/* Route for the Movie Search component */}
+          <Route path="/todo-list" element={<TodoList tasks={tasks} setTasks={setTasks} />} /> {/* Route for the To-Do List component */}
+          <Route path="/task/:id" element={<TaskDetail tasks={tasks} setTasks={setTasks} />} /> {/* Route for the Task Detail component */}
         </Routes>
       </div>
     </Router>
@@ -27,3 +26,4 @@ function App() {
 }
 
 export default App;
+
